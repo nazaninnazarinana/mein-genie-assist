@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Search, Upload, FileText, Users, Briefcase, Shield, Car, Home } from "lucide-react";
+import { Camera, Upload, Link, Mic, MessageSquare, Eye, Download, Printer, UserCheck, Play, Sparkles } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import FormChat from "@/components/FormChat";
 import FormReview from "@/components/FormReview";
@@ -23,51 +23,6 @@ const Formino = () => {
   const [selectedForm, setSelectedForm] = useState<FormType | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [formData, setFormData] = useState<Record<string, string>>({});
-
-  const formCategories = [
-    {
-      name: "Immigration",
-      icon: Users,
-      forms: [
-        { id: "visa-app", name: "Visa Application Form", description: "Standard visa application for Germany", icon: FileText },
-        { id: "residence-permit", name: "Residence Permit", description: "Apply for residence permit extension", icon: FileText },
-        { id: "citizenship", name: "Citizenship Application", description: "German citizenship application form", icon: FileText }
-      ]
-    },
-    {
-      name: "Labor",
-      icon: Briefcase,
-      forms: [
-        { id: "work-permit", name: "Work Permit Application", description: "Work authorization form", icon: FileText },
-        { id: "job-registration", name: "Job Center Registration", description: "Register with job center", icon: FileText }
-      ]
-    },
-    {
-      name: "Insurance",
-      icon: Shield,
-      forms: [
-        { id: "health-insurance", name: "Health Insurance Registration", description: "Register for health insurance", icon: FileText },
-        { id: "car-insurance", name: "Car Insurance Application", description: "Vehicle insurance form", icon: Car }
-      ]
-    },
-    {
-      name: "Housing",
-      icon: Home,
-      forms: [
-        { id: "housing-benefit", name: "Housing Benefit Application", description: "Apply for housing assistance", icon: FileText },
-        { id: "rental-agreement", name: "Rental Agreement Form", description: "Standard rental contract", icon: FileText }
-      ]
-    }
-  ];
-
-  const allForms = formCategories.flatMap(category => 
-    category.forms.map(form => ({ ...form, category: category.name }))
-  );
-
-  const filteredForms = allForms.filter(form =>
-    form.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    form.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   const handleFormSelect = (form: FormType) => {
     setSelectedForm(form);
@@ -93,111 +48,175 @@ const Formino = () => {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
             Formino: Your Smart Assistant for Completing Any Type of Form
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             Take a picture of your paper forms or talk to us, we'll do the rest.
           </p>
         </div>
 
-        {/* Search Section */}
-        <div className="mb-12">
-          <div className="relative max-w-2xl mx-auto">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-            <Input
-              type="text"
-              placeholder="Search for forms (e.g., Visa application form)"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-4 text-lg bg-white/10 border-white/20 text-white placeholder-gray-400 focus:bg-white/20"
-            />
-          </div>
-        </div>
-
-        {/* Upload Custom Form Button */}
-        <div className="text-center mb-12">
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-green-400 to-cyan-400 hover:from-green-500 hover:to-cyan-500 text-black font-semibold px-8 py-4 text-lg"
-            onClick={() => {
-              const customForm: FormType = {
-                id: 'custom-upload',
-                name: 'Custom Form Upload',
-                category: 'Custom',
-                description: 'Upload your own form',
-                icon: Upload
-              };
-              handleFormSelect(customForm);
-            }}
-          >
-            <Upload className="mr-2 h-6 w-6" />
-            Upload Your Custom Form
-          </Button>
-        </div>
-
-        {/* Form Categories */}
-        <div className="grid lg:grid-cols-2 gap-8">
-          {formCategories.map((category) => (
-            <Card key={category.name} className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300">
-              <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-gradient-to-r from-green-400 to-cyan-400 rounded-lg">
-                    <category.icon className="h-6 w-6 text-black" />
+        {/* Input Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">
+            <Sparkles className="inline mr-3 h-8 w-8 text-cyan-400" />
+            How Do You Want to Start?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Camera className="h-10 w-10 text-black" />
                   </div>
-                  <CardTitle className="text-white text-xl">{category.name}</CardTitle>
                 </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {category.forms.map((form) => (
-                  <div
-                    key={form.id}
-                    className="p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 cursor-pointer transition-all duration-200 group"
-                    onClick={() => handleFormSelect({ ...form, category: category.name })}
-                  >
-                    <div className="flex items-start space-x-3">
-                      <form.icon className="h-5 w-5 text-cyan-400 mt-0.5 group-hover:text-green-400 transition-colors" />
-                      <div>
-                        <h4 className="text-white font-medium group-hover:text-green-400 transition-colors">
-                          {form.name}
-                        </h4>
-                        <p className="text-gray-400 text-sm mt-1">{form.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                <h3 className="text-xl font-semibold text-white mb-3">Scan with Camera</h3>
+                <p className="text-gray-300">Take a picture of your paper forms and we'll digitize them instantly</p>
               </CardContent>
             </Card>
-          ))}
+
+            <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Upload className="h-10 w-10 text-black" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Upload File</h3>
+                <p className="text-gray-300">Upload PDF and Word files directly from your device</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Link className="h-10 w-10 text-black" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Online Link</h3>
+                <p className="text-gray-300">Enter the address of web forms and we'll handle the rest</p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
-        {/* Filtered Search Results */}
-        {searchTerm && (
-          <div className="mt-12">
-            <h3 className="text-2xl font-bold text-white mb-6">Search Results</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredForms.map((form) => (
-                <Card
-                  key={form.id}
-                  className="bg-white/10 border-white/20 hover:bg-white/20 cursor-pointer transition-all duration-300 group"
-                  onClick={() => handleFormSelect(form)}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-3">
-                      <form.icon className="h-6 w-6 text-cyan-400 mt-1 group-hover:text-green-400 transition-colors" />
-                      <div>
-                        <h4 className="text-white font-medium group-hover:text-green-400 transition-colors">
-                          {form.name}
-                        </h4>
-                        <p className="text-gray-400 text-sm mt-1">{form.description}</p>
-                        <span className="inline-block bg-purple-500/20 text-purple-300 text-xs px-2 py-1 rounded-full mt-2">
-                          {form.category}
-                        </span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+        {/* AI Interaction Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">
+            AI Interaction Options
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card 
+              className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group"
+              onClick={() => {
+                const voiceForm: FormType = {
+                  id: 'voice-interaction',
+                  name: 'Voice Interaction',
+                  category: 'AI',
+                  description: 'Talk to our AI assistant',
+                  icon: Mic
+                };
+                handleFormSelect(voiceForm);
+              }}
+            >
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <div className="w-24 h-24 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Mic className="h-12 w-12 text-black" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-3">Voice Assistant</h3>
+                <p className="text-gray-300 text-lg">Start a voice conversation with our smart assistant</p>
+                <Button className="mt-4 bg-gradient-to-r from-green-400 to-cyan-400 hover:from-green-500 hover:to-cyan-500 text-black font-semibold">
+                  <Play className="mr-2 h-5 w-5" />
+                  Start Voice Chat
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card 
+              className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group"
+              onClick={() => {
+                const textForm: FormType = {
+                  id: 'text-interaction',
+                  name: 'Text Interaction',
+                  category: 'AI',
+                  description: 'Chat with our AI assistant',
+                  icon: MessageSquare
+                };
+                handleFormSelect(textForm);
+              }}
+            >
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <div className="w-24 h-24 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <MessageSquare className="h-12 w-12 text-black" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-3">Text Chat</h3>
+                <p className="text-gray-300 text-lg">Interact with the assistant using text messages</p>
+                <Button className="mt-4 bg-gradient-to-r from-green-400 to-cyan-400 hover:from-green-500 hover:to-cyan-500 text-black font-semibold">
+                  <MessageSquare className="mr-2 h-5 w-5" />
+                  Start Text Chat
+                </Button>
+              </CardContent>
+            </Card>
           </div>
-        )}
+        </div>
+
+        {/* Review & Output Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">
+            Review & Output Options
+          </h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Eye className="h-8 w-8 text-black" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Review</h3>
+                <p className="text-gray-300 text-sm">Review and finalize your completed form</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Download className="h-8 w-8 text-black" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Download PDF</h3>
+                <p className="text-gray-300 text-sm">Get a digital output of your form</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Printer className="h-8 w-8 text-black" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Print</h3>
+                <p className="text-gray-300 text-sm">Get a printable version of your form</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <UserCheck className="h-8 w-8 text-black" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Consultant</h3>
+                <p className="text-gray-300 text-sm">Send to expert for professional review</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

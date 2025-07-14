@@ -1,14 +1,13 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
-import { Search, Phone, Clock, MapPin, Check, Loader2 } from "lucide-react";
+import { Search, Phone, Clock, MapPin, Check, Loader2, Bot, Mic, Calendar as CalendarIcon, Sync, Bell, Star, Sparkles, Play, Globe } from "lucide-react";
 import Navigation from "@/components/Navigation";
 
-type TerminoStep = 'request' | 'processing' | 'selection';
+type TerminoStep = 'main' | 'processing' | 'selection';
 
 interface Appointment {
   id: string;
@@ -19,7 +18,7 @@ interface Appointment {
 }
 
 const Termino = () => {
-  const [currentStep, setCurrentStep] = useState<TerminoStep>('request');
+  const [currentStep, setCurrentStep] = useState<TerminoStep>('main');
   const [appointmentRequest, setAppointmentRequest] = useState('');
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [appointments, setAppointments] = useState<Appointment[]>([]);
@@ -56,7 +55,6 @@ const Termino = () => {
     setCurrentStep('processing');
     setProcessingStage(0);
     
-    // Simulate processing stages
     setTimeout(() => setProcessingStage(1), 1000);
     setTimeout(() => setProcessingStage(2), 3000);
     setTimeout(() => {
@@ -68,28 +66,180 @@ const Termino = () => {
   const handleConfirmAppointment = () => {
     if (!selectedAppointment) return;
     
-    // Simulate adding to calendar and sending notification
     alert(`Appointment confirmed at ${selectedAppointment.centerName} on ${selectedAppointment.date} at ${selectedAppointment.time}`);
     
-    // Reset to start
-    setCurrentStep('request');
+    setCurrentStep('main');
     setAppointmentRequest('');
     setSelectedDate(new Date());
     setSelectedAppointment(null);
   };
 
-  const renderRequestStep = () => (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  const renderMainStep = () => (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
           Termino: We call and make an appointment for you!
         </h1>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-200 max-w-3xl mx-auto">
           Tell us what you need and we'll handle the rest - from searching to booking your perfect appointment time.
         </p>
       </div>
 
-      <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
+      {/* Main Interaction Section */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">
+          <Sparkles className="inline mr-3 h-8 w-8 text-cyan-400" />
+          Start Your Appointment Request
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+            <CardContent className="p-8 text-center">
+              <div className="mb-6">
+                <div className="w-24 h-24 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                  <Bot className="h-12 w-12 text-black" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold text-white mb-3">Smart Avatar</h3>
+              <p className="text-gray-300 text-lg">Our AI assistant will guide you through the process</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
+            <CardContent className="p-8 text-center">
+              <div className="mb-6">
+                <div className="w-24 h-24 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Mic className="h-12 w-12 text-black" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold text-white mb-3">Voice Interface</h3>
+              <p className="text-gray-300 text-lg">Simply speak your appointment request</p>
+              <Button className="mt-4 bg-gradient-to-r from-green-400 to-cyan-400 hover:from-green-500 hover:to-cyan-500 text-black font-semibold">
+                <Play className="mr-2 h-5 w-5" />
+                Start Voice Request
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      {/* Features Showcase Section */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">
+          Our Advanced Features
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 group">
+            <CardContent className="p-6 text-center">
+              <div className="mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="h-8 w-8 text-black" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Automated Phone Call</h3>
+              <p className="text-gray-300 text-sm mb-2">AI-powered phone calls to secure your appointments</p>
+              <span className="inline-block bg-yellow-500/20 text-yellow-400 text-xs px-2 py-1 rounded-full">
+                Professional Plan
+              </span>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 group">
+            <CardContent className="p-6 text-center">
+              <div className="mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="h-8 w-8 text-black" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Online Reservation</h3>
+              <p className="text-gray-300 text-sm">Works with websites and booking platforms automatically</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 group">
+            <CardContent className="p-6 text-center">
+              <div className="mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Search className="h-8 w-8 text-black" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Quick Search</h3>
+              <p className="text-gray-300 text-sm mb-2">Find the fastest available high-priority slots</p>
+              <span className="inline-block bg-purple-500/20 text-purple-400 text-xs px-2 py-1 rounded-full">
+                Pro Plan
+              </span>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      {/* Appointment Management Section */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">
+          Appointment Management
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 group">
+            <CardContent className="p-6 text-center">
+              <div className="mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <CalendarIcon className="h-8 w-8 text-black" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Integrated Calendar</h3>
+              <p className="text-gray-300 text-sm">All your appointments in one central calendar</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 group">
+            <CardContent className="p-6 text-center">
+              <div className="mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Sync className="h-8 w-8 text-black" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Calendar Sync</h3>
+              <p className="text-gray-300 text-sm">Sync with Google Calendar and other platforms</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 group">
+            <CardContent className="p-6 text-center">
+              <div className="mb-4">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Bell className="h-8 w-8 text-black" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Smart Notifications</h3>
+              <p className="text-gray-300 text-sm">Reminders and confirmations for all appointments</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      {/* Plans & Subscription Section */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">
+          <Star className="inline mr-3 h-8 w-8 text-yellow-400" />
+          Upgrade Your Experience
+        </h2>
+        <Card className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 border-purple-400/30 max-w-2xl mx-auto">
+          <CardContent className="p-8 text-center">
+            <div className="mb-6">
+              <div className="w-20 h-20 mx-auto bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
+                <Star className="h-10 w-10 text-black" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-semibold text-white mb-4">Pro Plan Exclusive Features</h3>
+            <p className="text-gray-300 text-lg mb-6">Unlock premium features for the ultimate appointment booking experience</p>
+            <Button className="bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-500 hover:to-orange-500 text-black font-semibold text-lg px-8 py-3">
+              Upgrade to Pro
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Request Form */}
+      <Card className="bg-white/10 border-white/20 backdrop-blur-sm max-w-4xl mx-auto">
         <CardHeader>
           <CardTitle className="text-white text-2xl">Step 1: Register a Request</CardTitle>
           <CardDescription className="text-gray-300">
@@ -240,7 +390,7 @@ const Termino = () => {
 
       <div className="flex space-x-4">
         <Button
-          onClick={() => setCurrentStep('request')}
+          onClick={() => setCurrentStep('main')}
           variant="outline"
           className="flex-1 border-white/20 text-white hover:bg-white/10"
         >
@@ -260,7 +410,7 @@ const Termino = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Navigation />
-      {currentStep === 'request' && renderRequestStep()}
+      {currentStep === 'main' && renderMainStep()}
       {currentStep === 'processing' && renderProcessingStep()}
       {currentStep === 'selection' && renderSelectionStep()}
     </div>
