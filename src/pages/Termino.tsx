@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
-import { Search, Phone, Clock, MapPin, Check, Loader2, Bot, Mic, Calendar as CalendarIcon, Sync, Bell, Star, Sparkles, Play, Globe } from "lucide-react";
+import { Search, Phone, Clock, MapPin, Check, Loader2, Bot, Mic, Calendar as CalendarIcon, RefreshCw, Bell, Star, Sparkles, Play, Globe } from "lucide-react";
 import Navigation from "@/components/Navigation";
 
 type TerminoStep = 'main' | 'processing' | 'selection';
@@ -194,7 +194,7 @@ const Termino = () => {
             <CardContent className="p-6 text-center">
               <div className="mb-4">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-400 to-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Sync className="h-8 w-8 text-black" />
+                  <RefreshCw className="h-8 w-8 text-black" />
                 </div>
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Calendar Sync</h3>
