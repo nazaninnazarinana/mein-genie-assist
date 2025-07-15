@@ -16,7 +16,7 @@ const ModuleCards = () => {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse">
             {t('modules.title')}
           </h2>
-          <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed font-medium">
+          <p className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse max-w-2xl mx-auto leading-relaxed font-medium">
             {t('modules.subtitle')}
           </p>
         </div>
@@ -27,8 +27,8 @@ const ModuleCards = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-green-400/10 rounded-full -translate-y-16 translate-x-16"></div>
             <CardHeader className="relative">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="p-3 bg-green-400/20 rounded-lg border border-green-400/30">
-                  <FileText className="h-8 w-8 text-green-400" />
+                <div className="p-3 bg-gradient-to-r from-green-400 to-cyan-400 rounded-lg border border-green-400/30 animate-pulse">
+                  <FileText className="h-8 w-8 text-white" />
                 </div>
                 <div>
                   <CardTitle className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse">
@@ -47,15 +47,15 @@ const ModuleCards = () => {
               
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <Mic className="h-5 w-5 text-green-400" />
+                  <Mic className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse" />
                   <span className="text-sm text-white font-medium">{t('modules.formino.feature1')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FileText className="h-5 w-5 text-green-400" />
+                  <FileText className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse" />
                   <span className="text-sm text-white font-medium">{t('modules.formino.feature2')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Shield className="h-5 w-5 text-green-400" />
+                  <Shield className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse" />
                   <span className="text-sm text-white font-medium">{t('modules.formino.feature3')}</span>
                 </div>
               </div>
@@ -76,8 +76,8 @@ const ModuleCards = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -translate-y-16 translate-x-16"></div>
             <CardHeader className="relative">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="p-3 bg-cyan-400/20 rounded-lg border border-cyan-400/30">
-                  <Calendar className="h-8 w-8 text-cyan-400" />
+                <div className="p-3 bg-gradient-to-r from-green-400 to-cyan-400 rounded-lg border border-cyan-400/30 animate-pulse">
+                  <Calendar className="h-8 w-8 text-white" />
                 </div>
                 <div>
                   <CardTitle className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse">
@@ -96,15 +96,15 @@ const ModuleCards = () => {
               
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-cyan-400" />
+                  <Phone className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse" />
                   <span className="text-sm text-white font-medium">{t('modules.termino.feature1')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Calendar className="h-5 w-5 text-cyan-400" />
+                  <Calendar className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse" />
                   <span className="text-sm text-white font-medium">{t('modules.termino.feature2')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock className="h-5 w-5 text-cyan-400" />
+                  <Clock className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse" />
                   <span className="text-sm text-white font-medium">{t('modules.termino.feature3')}</span>
                 </div>
               </div>
