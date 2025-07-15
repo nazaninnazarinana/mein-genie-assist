@@ -60,6 +60,38 @@ const translations = {
     'modules.termino.feature3': '24/7 appointment monitoring',
     'modules.termino.button': 'Explore Termino',
     
+    // Features
+    'features.title': 'Everything You Need in One Platform',
+    'features.subtitle': 'Comprehensive tools designed to make bureaucracy simple and accessible for everyone.',
+    'features.ai.title': 'AI-Powered Intelligence',
+    'features.ai.description': 'Advanced natural language processing that understands context and nuance in multiple languages.',
+    'features.security.title': 'Enterprise Security',
+    'features.security.description': 'Bank-level encryption and security protocols to protect your sensitive information.',
+    'features.support.title': '24/7 Human Support',
+    'features.support.description': 'Real people available around the clock to help when you need assistance.',
+    'features.integration.title': 'Seamless Integration',
+    'features.integration.description': 'Works with existing systems and platforms you already use.',
+    'features.multilingual.title': 'Multilingual Support',
+    'features.multilingual.description': 'Full support for multiple languages with native-level understanding.',
+    'features.accessibility.title': 'Accessibility First',
+    'features.accessibility.description': 'Designed for users of all abilities with comprehensive accessibility features.',
+    
+    // Why Mein Genie
+    'why.title': 'Why Choose Mein Genie?',
+    'why.subtitle': 'Join thousands who have already simplified their administrative lives.',
+    'why.timeSaved.title': 'Time Saved',
+    'why.timeSaved.description': 'Average 5 hours saved per week on administrative tasks.',
+    'why.accuracy.title': 'Accuracy Rate',
+    'why.accuracy.description': 'AI-powered form completion with human verification.',
+    'why.satisfaction.title': 'User Satisfaction',
+    'why.satisfaction.description': 'Rated excellent by users across all demographics.',
+    'why.languages.title': 'Languages Supported',
+    'why.languages.description': 'Full support for major world languages.',
+    
+    // Testimonials
+    'testimonials.title': 'What Our Users Say',
+    'testimonials.subtitle': 'Real stories from people who have transformed their administrative experience.',
+    
     // Common
     'common.download': 'Download PDF File',
     'common.upload': 'Upload File',
@@ -108,6 +140,38 @@ const translations = {
     'modules.termino.feature2': 'Automatische Kalender-Synchronisation',
     'modules.termino.feature3': '24/7 Terminüberwachung',
     'modules.termino.button': 'Termino erkunden',
+    
+    // Features
+    'features.title': 'Alles was Sie brauchen in einer Plattform',
+    'features.subtitle': 'Umfassende Tools, die Bürokratie einfach und zugänglich für alle machen.',
+    'features.ai.title': 'KI-gestützte Intelligenz',
+    'features.ai.description': 'Fortgeschrittene Sprachverarbeitung, die Kontext und Nuancen in mehreren Sprachen versteht.',
+    'features.security.title': 'Unternehmenssicherheit',
+    'features.security.description': 'Bankniveau-Verschlüsselung und Sicherheitsprotokolle zum Schutz Ihrer sensiblen Informationen.',
+    'features.support.title': '24/7 Menschlicher Support',
+    'features.support.description': 'Echte Menschen rund um die Uhr verfügbar, um zu helfen, wenn Sie Unterstützung benötigen.',
+    'features.integration.title': 'Nahtlose Integration',
+    'features.integration.description': 'Funktioniert mit bestehenden Systemen und Plattformen, die Sie bereits verwenden.',
+    'features.multilingual.title': 'Mehrsprachiger Support',
+    'features.multilingual.description': 'Vollständige Unterstützung für mehrere Sprachen mit muttersprachlichem Verständnis.',
+    'features.accessibility.title': 'Barrierefreiheit zuerst',
+    'features.accessibility.description': 'Entwickelt für Benutzer aller Fähigkeiten mit umfassenden Barrierefreiheitsfunktionen.',
+    
+    // Why Mein Genie
+    'why.title': 'Warum Mein Genie wählen?',
+    'why.subtitle': 'Schließen Sie sich Tausenden an, die bereits ihr Verwaltungsleben vereinfacht haben.',
+    'why.timeSaved.title': 'Gesparte Zeit',
+    'why.timeSaved.description': 'Durchschnittlich 5 Stunden pro Woche bei Verwaltungsaufgaben gespart.',
+    'why.accuracy.title': 'Genauigkeitsrate',
+    'why.accuracy.description': 'KI-gestützte Formularausfüllung mit menschlicher Überprüfung.',
+    'why.satisfaction.title': 'Benutzerzufriedenheit',
+    'why.satisfaction.description': 'Von Benutzern aller Demografien als ausgezeichnet bewertet.',
+    'why.languages.title': 'Unterstützte Sprachen',
+    'why.languages.description': 'Vollständige Unterstützung für wichtige Weltsprachen.',
+    
+    // Testimonials
+    'testimonials.title': 'Was unsere Benutzer sagen',
+    'testimonials.subtitle': 'Echte Geschichten von Menschen, die ihre Verwaltungserfahrung transformiert haben.',
     
     // Common
     'common.download': 'PDF-Datei herunterladen',
@@ -158,6 +222,38 @@ const translations = {
     'modules.termino.feature3': 'مراقبة المواعيد على مدار الساعة',
     'modules.termino.button': 'استكشف تيرمينو',
     
+    // Features
+    'features.title': 'كل ما تحتاجه في منصة واحدة',
+    'features.subtitle': 'أدوات شاملة مصممة لجعل البيروقراطية بسيطة ومتاحة للجميع.',
+    'features.ai.title': 'ذكاء مدعوم بالذكاء الاصطناعي',
+    'features.ai.description': 'معالجة متقدمة للغة الطبيعية تفهم السياق والفروق الدقيقة في لغات متعددة.',
+    'features.security.title': 'أمان المؤسسات',
+    'features.security.description': 'تشفير على مستوى البنوك وبروتوكولات أمان لحماية معلوماتك الحساسة.',
+    'features.support.title': 'دعم بشري على مدار الساعة',
+    'features.support.description': 'أشخاص حقيقيون متاحون على مدار الساعة للمساعدة عندما تحتاج إلى المساعدة.',
+    'features.integration.title': 'تكامل سلس',
+    'features.integration.description': 'يعمل مع الأنظمة والمنصات الموجودة التي تستخدمها بالفعل.',
+    'features.multilingual.title': 'دعم متعدد اللغات',
+    'features.multilingual.description': 'دعم كامل للغات متعددة بفهم على مستوى اللغة الأم.',
+    'features.accessibility.title': 'إمكانية الوصول أولاً',
+    'features.accessibility.description': 'مصمم للمستخدمين من جميع القدرات مع ميزات إمكانية وصول شاملة.',
+    
+    // Why Mein Genie
+    'why.title': 'لماذا تختار مين جيني؟',
+    'why.subtitle': 'انضم إلى الآلاف الذين بسطوا بالفعل حياتهم الإدارية.',
+    'why.timeSaved.title': 'الوقت المُوفر',
+    'why.timeSaved.description': 'متوسط 5 ساعات موفرة أسبوعياً في المهام الإدارية.',
+    'why.accuracy.title': 'معدل الدقة',
+    'why.accuracy.description': 'إكمال النماذج بالذكاء الاصطناعي مع التحقق البشري.',
+    'why.satisfaction.title': 'رضا المستخدم',
+    'why.satisfaction.description': 'مُصنف كممتاز من قبل المستخدمين عبر جميع الفئات الديموغرافية.',
+    'why.languages.title': 'اللغات المدعومة',
+    'why.languages.description': 'دعم كامل للغات العالمية الرئيسية.',
+    
+    // Testimonials
+    'testimonials.title': 'ما يقوله مستخدمونا',
+    'testimonials.subtitle': 'قصص حقيقية من أشخاص حولوا تجربتهم الإدارية.',
+    
     // Common
     'common.download': 'تحميل ملف PDF',
     'common.upload': 'رفع ملف',
@@ -206,6 +302,38 @@ const translations = {
     'modules.termino.feature2': 'Sincronización automática del calendario',
     'modules.termino.feature3': 'Monitoreo de citas 24/7',
     'modules.termino.button': 'Explorar Termino',
+    
+    // Features
+    'features.title': 'Todo lo que Necesitas en Una Plataforma',
+    'features.subtitle': 'Herramientas integrales diseñadas para hacer la burocracia simple y accesible para todos.',
+    'features.ai.title': 'Inteligencia Impulsada por IA',
+    'features.ai.description': 'Procesamiento avanzado de lenguaje natural que entiende contexto y matices en múltiples idiomas.',
+    'features.security.title': 'Seguridad Empresarial',
+    'features.security.description': 'Cifrado de nivel bancario y protocolos de seguridad para proteger tu información sensible.',
+    'features.support.title': 'Soporte Humano 24/7',
+    'features.support.description': 'Personas reales disponibles las 24 horas para ayudar cuando necesites asistencia.',
+    'features.integration.title': 'Integración Perfecta',
+    'features.integration.description': 'Funciona con sistemas y plataformas existentes que ya usas.',
+    'features.multilingual.title': 'Soporte Multilingüe',
+    'features.multilingual.description': 'Soporte completo para múltiples idiomas con comprensión a nivel nativo.',
+    'features.accessibility.title': 'Accesibilidad Primero',
+    'features.accessibility.description': 'Diseñado para usuarios de todas las habilidades con características de accesibilidad integrales.',
+    
+    // Why Mein Genie
+    'why.title': '¿Por qué elegir Mein Genie?',
+    'why.subtitle': 'Únete a miles que ya han simplificado sus vidas administrativas.',
+    'why.timeSaved.title': 'Tiempo Ahorrado',
+    'why.timeSaved.description': 'Promedio de 5 horas ahorradas por semana en tareas administrativas.',
+    'why.accuracy.title': 'Tasa de Precisión',
+    'why.accuracy.description': 'Completado de formularios impulsado por IA con verificación humana.',
+    'why.satisfaction.title': 'Satisfacción del Usuario',
+    'why.satisfaction.description': 'Calificado como excelente por usuarios de todas las demografías.',
+    'why.languages.title': 'Idiomas Soportados',
+    'why.languages.description': 'Soporte completo para los principales idiomas mundiales.',
+    
+    // Testimonials
+    'testimonials.title': 'Lo que Dicen Nuestros Usuarios',
+    'testimonials.subtitle': 'Historias reales de personas que han transformado su experiencia administrativa.',
     
     // Common
     'common.download': 'Descargar archivo PDF',

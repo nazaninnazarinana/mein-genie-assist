@@ -13,10 +13,10 @@ const ModuleCards = () => {
     <section className="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse">
             {t('modules.title')}
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed font-medium">
+          <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed font-medium">
             {t('modules.subtitle')}
           </p>
         </div>
@@ -31,32 +31,32 @@ const ModuleCards = () => {
                   <FileText className="h-8 w-8 text-green-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">
+                  <CardTitle className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse">
                     {t('modules.formino.title')}
                   </CardTitle>
-                  <CardDescription className="text-base text-white/80 font-medium">
+                  <CardDescription className="text-base text-white font-medium">
                     {t('modules.formino.subtitle')}
                   </CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-white/90 leading-relaxed font-medium">
+              <p className="text-white leading-relaxed font-medium">
                 {t('modules.formino.description')}
               </p>
               
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mic className="h-5 w-5 text-green-400" />
-                  <span className="text-sm text-white/90 font-medium">{t('modules.formino.feature1')}</span>
+                  <span className="text-sm text-white font-medium">{t('modules.formino.feature1')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FileText className="h-5 w-5 text-green-400" />
-                  <span className="text-sm text-white/90 font-medium">{t('modules.formino.feature2')}</span>
+                  <span className="text-sm text-white font-medium">{t('modules.formino.feature2')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Shield className="h-5 w-5 text-green-400" />
-                  <span className="text-sm text-white/90 font-medium">{t('modules.formino.feature3')}</span>
+                  <span className="text-sm text-white font-medium">{t('modules.formino.feature3')}</span>
                 </div>
               </div>
               
@@ -80,32 +80,32 @@ const ModuleCards = () => {
                   <Calendar className="h-8 w-8 text-cyan-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">
+                  <CardTitle className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 animate-pulse">
                     {t('modules.termino.title')}
                   </CardTitle>
-                  <CardDescription className="text-base text-white/80 font-medium">
+                  <CardDescription className="text-base text-white font-medium">
                     {t('modules.termino.subtitle')}
                   </CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-white/90 leading-relaxed font-medium">
+              <p className="text-white leading-relaxed font-medium">
                 {t('modules.termino.description')}
               </p>
               
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-cyan-400" />
-                  <span className="text-sm text-white/90 font-medium">{t('modules.termino.feature1')}</span>
+                  <span className="text-sm text-white font-medium">{t('modules.termino.feature1')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Calendar className="h-5 w-5 text-cyan-400" />
-                  <span className="text-sm text-white/90 font-medium">{t('modules.termino.feature2')}</span>
+                  <span className="text-sm text-white font-medium">{t('modules.termino.feature2')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Clock className="h-5 w-5 text-cyan-400" />
-                  <span className="text-sm text-white/90 font-medium">{t('modules.termino.feature3')}</span>
+                  <span className="text-sm text-white font-medium">{t('modules.termino.feature3')}</span>
                 </div>
               </div>
               
